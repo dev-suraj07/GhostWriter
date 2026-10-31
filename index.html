@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090914">
+  <title>GhostWriter - Haunted Story Generator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">✦</span>
+      GHOST<span>WRITER</span>
+    </a>
+    <div class="top-note">
+      <span class="live-dot"></span>
+      THE SPIRIT IS AWAKE
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">A LITTLE MAGIC. A LITTLE MADNESS.</p>
+
+      <h1>
+        Stories from<br>
+        <span>the other side.</span>
+      </h1>
+
+      <p class="hero-copy">
+        Step into the darkness. Give the machine a thought,
+        and let an open-source AI turn it into a tale worth remembering.
+      </p>
+
+      <div class="hero-divider"><span>✧</span></div>
+    </section>
+
+    <section class="workspace">
+
+      <!-- STORY INPUT -->
+      <div class="panel prompt-panel">
+
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker">01 / SUMMON A STORY</p>
+            <h2>What haunts your imagination?</h2>
+          </div>
+          <span class="moon-icon">☾</span>
+        </div>
+
+        <label for="idea">YOUR STORY SEED</label>
+
+        <textarea id="idea" rows="4"
+          placeholder="A forgotten railway station where the last train arrives at 3:13 AM..."></textarea>
+
+        <div class="form-row">
+
+          <div class="field">
+            <label for="genre">CHOOSE YOUR NIGHTMARE</label>
+
+            <select id="genre">
+              <option value="supernatural horror">Supernatural horror</option>
+              <option value="psychological horror">Psychological horror</option>
+              <option value="ghost mystery">Ghost mystery</option>
+              <option value="dark folklore">Dark folklore</option>
+              <option value="eerie science fiction">Eerie science fiction</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="length">STORY LENGTH</label>
+
+            <select id="length">
+              <option value="short">Short</option>
+              <option value="medium" selected>Medium</option>
+              <option value="long">Long</option>
+            </select>
+          </div>
+
+        </div>
+
+        <button id="generateBtn" class="summon-btn">
+          <span class="btn-icon">✧</span>
+          <span id="buttonText">SUMMON MY STORY</span>
+          <span class="btn-arrow">↗</span>
+        </button>
+
+        <div class="model-status" id="modelStatus">
+          <span class="status-dot"></span>
+          <span id="statusText">
+            AI model will load when you summon your first story.
+          </span>
+        </div>
+
+        <p class="privacy-note">
+          ⌑ Your prompt stays in this browser.
+          Model inference runs locally after the model has downloaded.
+        </p>
+
+      </div>
+
+      <!-- STORY OUTPUT -->
+      <div class="panel story-panel">
+
+        <div class="story-top">
+          <div>
+            <p class="section-kicker">02 / THE MANUSCRIPT</p>
+            <h2>From the shadows</h2>
+          </div>
+
+          <span class="story-stamp">
+            CLASSIFIED<br>AFTER DARK
+          </span>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+
+          <div class="book-art">
+            <div class="book-glow"></div>
+            <div class="book">✦</div>
+          </div>
+
+          <h3>The page is waiting...</h3>
+
+          <p>
+            Your story hasn't crossed over yet.<br>
+            Give the machine a seed to begin.
+          </p>
+
+        </div>
+
+        <div id="loadingState" class="loading-state hidden">
+
+          <div class="spinner"></div>
+
+          <h3 id="loadingTitle">Awakening the machine...</h3>
+
+          <p id="loadingMessage">
+            The first visit may take a little while as the open model downloads.
+          </p>
+
+        </div>
+
+        <article id="storyOutput" class="story-output hidden">
+
+          <div class="story-meta">
+            <span id="storyGenre">SUPERNATURAL HORROR</span>
+            <span>✦ AN ORIGINAL TALE</span>
+          </div>
+
+          <h3 id="storyTitle"></h3>
+
+          <div id="storyText"></div>
+
+          <div class="story-actions">
+            <button id="copyBtn" class="secondary-btn">
+              ▣ COPY STORY
+            </button>
+
+            <button id="againBtn" class="secondary-btn">
+              ↻ GENERATE AGAIN
+            </button>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- OPEN SOURCE INFORMATION -->
+    <section class="open-note">
+
+      <div class="open-icon">⌘</div>
+
+      <div>
+        <p class="section-kicker">BUILT IN THE OPEN</p>
+
+        <h3>No secret API. No cloud-bound prompts.</h3>
+
+        <p>
+          GhostWriter uses Transformers.js and an open-weight
+          language model. The model runs on your device in the
+          browser, giving you control over the experience and
+          keeping story prompts out of a third-party inference service.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <span>GHOSTWRITER</span>
+    · MADE FOR THE CURIOUS & THE COURAGEOUS ·
+    <span>2026</span>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
