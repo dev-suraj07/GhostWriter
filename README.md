@@ -1,6 +1,6 @@
 # GhostWriter
 
-
+#demo: https://ghostwriter-blue.vercel.app/
 # 👻 GhostWriter – The Haunted Story Generator
 
 A spooky AI-powered story generator built using HTML, CSS, and JavaScript.
